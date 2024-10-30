@@ -25,8 +25,8 @@ health_check = SparkSubmitOperator(
     dag=dag
 )
 
-python_job_repartition = SparkSubmitOperator(
-    task_id="python_job_repartition",
+repartition = SparkSubmitOperator(
+    task_id="repartition",
     conn_id="spark-conn",
     application="jobs/python/repartition.py",
     dag=dag
@@ -38,4 +38,4 @@ end = PythonOperator(
     dag=dag
 )
 
-start >> health_check >> python_job_repartition >> end
+start >> health_check >> repartition >> end
