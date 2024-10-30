@@ -160,3 +160,26 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+/data/source/data1.csv
+/data/partitions/._SUCCESS.crc
+/data/partitions/.part-00000-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00001-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00002-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00003-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00004-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00005-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00006-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00007-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00008-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/.part-00009-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv.crc
+/data/partitions/_SUCCESS
+/data/partitions/part-00000-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00001-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00002-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00003-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00004-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00005-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00006-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00007-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00008-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
+/data/partitions/part-00009-32133f2f-160e-4960-af34-2b8a3ab177a1-c000.csv
