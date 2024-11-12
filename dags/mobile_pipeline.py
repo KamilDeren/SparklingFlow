@@ -29,10 +29,9 @@ repartition = SparkSubmitOperator(
     task_id="repartition",
     conn_id="spark-conn",
     application="jobs/python/repartition.py",
-    application_args=["--partition", 10,
-                      "--input", "/data/source/data1.csv",
+    application_args=["--input", "/data/source/data1.csv",
                       "--temp", "/data/temp_partitions/",
-                      "--output", "/data/partitions/"],
+                      "--output", "/data/bronze/partitions/"],
     dag=dag
 )
 
@@ -49,4 +48,4 @@ end = PythonOperator(
     dag=dag
 )
 
-start >> health_check >> faker_data >> end
+start >> health_check >> repartition >> faker_data >> end
