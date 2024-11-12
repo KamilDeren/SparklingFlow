@@ -14,7 +14,11 @@ partition_num = sys.argv[sys.argv.index('--partition') + 1]
 
 df = spark.read.csv(input_path, header=True, inferSchema=True)
 
+columns_to_fill = ["smsin", "smsout", "callin", "callout", "internet"]
+
 df_partitioned = df.repartition(partition_num)
+
+df_filled = df_partitioned.fillna(0, subset=columns_to_fill)
 
 df_partitioned.write.mode("overwrite").csv(temp_savepath, header=True)
 

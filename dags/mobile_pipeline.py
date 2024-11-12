@@ -36,10 +36,17 @@ repartition = SparkSubmitOperator(
     dag=dag
 )
 
+faker_data = SparkSubmitOperator(
+    task_id="faker_data",
+    conn_id="spark-conn",
+    application="jobs/python/generate_fake_data.py",
+    dag=dag
+)
+
 end = PythonOperator(
     task_id="end",
     python_callable=lambda: print("Jobs completed successfully"),
     dag=dag
 )
 
-start >> health_check >> repartition >> end
+start >> health_check >> faker_data >> end
