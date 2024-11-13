@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.4">
   <diagram name="Strona-1" id="AKng_ESbKjumxK6DU_Bs">
-    <mxGraphModel dx="3402" dy="2317" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2501" dy="1915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -129,7 +129,7 @@
         <mxCell id="fPY2Tthy9RuAqfQ_gG5_-80" value="schema:&amp;nbsp;&lt;br&gt;GridID: Integer&lt;div&gt;TimeInterval: Timestamp&lt;/div&gt;&lt;div&gt;InternetCDR: Float&lt;/div&gt;&lt;div&gt;InternetTransfer: Float&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="1480" width="140" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="T8NU-TL7ekUcq-iIJy7e-2" value="bronze/milan_mobile/&amp;nbsp;&lt;br&gt;milan_mobile_part0.csv&lt;div&gt;milan_mobile_part1.csv&lt;br&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
+        <mxCell id="T8NU-TL7ekUcq-iIJy7e-2" value="bronze/partitions/&amp;nbsp;&lt;br&gt;milan_mobile_part0.csv&lt;div&gt;milan_mobile_part1.csv&lt;br&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="840" y="220" width="200" height="90" as="geometry" />
         </mxCell>
         <mxCell id="BO2p9xkJt_e9tAxmMOo1-1" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;font style=&quot;&quot;&gt;Kamil &lt;/font&gt;&lt;font style=&quot;&quot;&gt;Dereń&lt;/font&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Dominik Dziuba&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Damian Kluczyński&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Gr. D DS01&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
@@ -149,9 +149,6 @@
         </mxCell>
         <mxCell id="UBAmns6SdKheWYtsYeD3-2" value="schema:&amp;nbsp;&lt;br&gt;&lt;div&gt;TimeInterval: Timestamp&lt;/div&gt;&lt;div&gt;SmsinCDR: Float&lt;br&gt;&lt;/div&gt;&lt;div&gt;SmsoutCDR: Float&lt;br&gt;&lt;/div&gt;&lt;div&gt;CallinCDR: Float&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;CalloutCDR: Float&lt;/span&gt;&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="1310" y="285" width="140" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="cyaOHyr9ARaaXlVXIIjq-1" value="Czy w każdej partycji ma być header?" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
-          <mxGeometry x="840" y="310" width="213" height="80" as="geometry" />
         </mxCell>
         <mxCell id="cyaOHyr9ARaaXlVXIIjq-2" value="Arytkuł o Milan mobile (dołączyć w pdf i wysłac)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="880" y="620" width="200" height="90" as="geometry" />
