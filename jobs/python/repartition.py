@@ -34,20 +34,15 @@ df_with_random_codes = df.withColumn(
     ).otherwise(col("countrycode"))  # Keep original countrycode if it's not 0
 )
 
-zero_counts = df_with_random_codes.select("countrycode").filter(df_with_random_codes.countrycode == 0).count()
-print(f"Number of zeros after replacement: {zero_counts}")
-
-df_with_random_codes.show()
-
 # Filling null values with 0's
 
 columns_to_fill = ["smsin", "smsout", "callin", "callout", "internet"]
 
-df_partitioned = df.repartition(partition_num)
+df_partitioned = df_with_random_codes.repartition(partition_num)
 
 df_filled = df_partitioned.fillna(0, subset=columns_to_fill)
 
-df_partitioned.write.mode("overwrite").csv(temp_savepath, header=True)
+df_filled.write.mode("overwrite").csv(temp_savepath, header=True)
 
 # Rename files in the temporary directory
 for i, filename in enumerate(os.listdir(temp_savepath)):
