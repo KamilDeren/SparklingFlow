@@ -7,7 +7,7 @@ df = spark.read.csv('/data/bronze/partitions/milan_mobile_part1.csv', header=Tru
 
 df_internet_usage = df.select(
     concat(col('GridID').cast('string'), lit("_"), col('countrycode').cast('string')).alias("GridID_countrycode"),
-    (col("TimeInterval") / 1000).cast("timestamp").alias("TimeInterval"),
+    col("TimeInterval"),
     col("internet").alias("InternetCDR"),
     (col("internet") * 5).alias("InternetTransfer")
 )

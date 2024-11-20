@@ -9,7 +9,7 @@ df = spark.read.csv("/data/bronze/partitions/milan_mobile_part1.csv", header=Tru
 
 df_mobile_usage = df.select(
     concat(col('GridID').cast('string'), lit("_"), col('countrycode').cast('string')).alias("GridID_countrycode"),
-    (col("TimeInterval") / 1000).cast("timestamp").alias("TimeInterval"),
+    col("TimeInterval"),
     col("smsin").alias("SmsInCDR"),
     col("smsout").alias("SmsOutCDR"),
     col("callin").alias("CallInCDR"),
