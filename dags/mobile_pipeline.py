@@ -42,10 +42,24 @@ faker_data = SparkSubmitOperator(
     dag=dag
 )
 
+internet_usage = SparkSubmitOperator(
+    task_id="internet_usage",
+    conn_id="spark-conn",
+    application="jobs/python/internet_usage.py",
+    dag=dag
+)
+
+mobile_usage = SparkSubmitOperator(
+    task_id="mobile_usage",
+    conn_id="spark-conn",
+    application="jobs/python/mobile_usage.py",
+    dag=dag
+)
+
 end = PythonOperator(
     task_id="end",
     python_callable=lambda: print("Jobs completed successfully"),
     dag=dag
 )
 
-start >> health_check >> repartition >> faker_data >> end
+start >> health_check >> repartition >> faker_data >> internet_usage >> mobile_usage >> end

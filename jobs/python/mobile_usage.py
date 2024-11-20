@@ -1,70 +1,21 @@
-import psycopg2
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, unix_timestamp
+from pyspark.sql.functions import col, concat, lit, coalesce
 
-# Setup Spark session
-spark = SparkSession.builder \
-    .appName("PostgresMobileUsage") \
-    .config("spark.jars", "/path/to/postgresql-<version>.jar") \
-    .getOrCreate()
+spark = SparkSession.builder.appName("MobileUsage").getOrCreate()
 
-# PostgreSQL connection parameters
-jdbc_url = "jdbc:postgresql://localhost:5432/airflow"
-properties = {
-    "user": "airflow",
-    "password": "airflow",
-    "driver": "org.postgresql.Driver"
-}
+df = spark.read.csv('/data/bronze/partitions/milan_mobile_part1.csv', header=True, inferSchema=True)
 
+df = spark.read.csv("/data/bronze/partitions/milan_mobile_part1.csv", header=True, inferSchema=True)
 
-# Function to create mobile_usage table if not exists
-def create_mobile_usage_table():
-    try:
-        conn = psycopg2.connect(
-            host="localhost",
-            port="5432",
-            database="airflow",
-            user="airflow",
-            password="airflow"
-        )
-        cursor = conn.cursor()
-
-        create_sql = """
-        CREATE TABLE IF NOT EXISTS mobile_usage (
-            GridID_countrycode VARCHAR PRIMARY KEY,
-            TimeInterval TIMESTAMP,
-            SmsinCDR FLOAT,
-            SmsoutCDR FLOAT,
-            CallinCDR FLOAT,
-            CalloutCDR FLOAT
-        );
-        """
-        cursor.execute(create_sql)
-        conn.commit()
-        cursor.close()
-        conn.close()
-        print("Table 'mobile_usage' created or already exists.")
-    except Exception as e:
-        print(f"Error creating table: {e}")
-
-
-# Load mobile usage data from CSV file
-mobile_usage_file_path = "/data/bronze/partitions/milan_mobile_part1.csv"
-df_main = spark.read.csv(mobile_usage_file_path, header=True, inferSchema=True)
-
-# Transform main data for mobile_usage
-df_mobile_usage = df_main.select(
-    (col("GridID").cast("string") + "_" + col("countrycode").cast("string")).alias("GridID_countrycode"),
-    unix_timestamp(col("TimeInterval") / 1000).cast("timestamp").alias("TimeInterval"),
-    "smsin", "smsout", "callin", "callout"
+df_mobile_usage = df.select(
+    concat(col('GridID').cast('string'), lit("_"), col('countrycode').cast('string')).alias("GridID_countrycode"),
+    (col("TimeInterval") / 1000).cast("timestamp").alias("TimeInterval"),
+    col("smsin").alias("SmsInCDR"),
+    col("smsout").alias("SmsOutCDR"),
+    col("callin").alias("CallInCDR"),
+    col("callout").alias("CallOutCDR")
 )
 
-# Ensure mobile_usage table exists
-create_mobile_usage_table()
+df_mobile_usage.coalesce(1).write.csv('/data/silver/mobile_usage_output', header=True, mode="overwrite")
 
-# Write mobile_usage data to PostgreSQL
-df_mobile_usage.write.jdbc(
-    url=jdbc_url, table="mobile_usage", mode="overwrite", properties=properties
-)
-
-print("Mobile usage data successfully written to PostgreSQL table!")
+print("Mobile usage data successfully written to file")
