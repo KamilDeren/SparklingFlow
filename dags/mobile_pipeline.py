@@ -18,27 +18,48 @@ start = PythonOperator(
     dag=dag
 )
 
-health_check = SparkSubmitOperator(
-    task_id="health_check",
-    conn_id="spark-conn",
-    application="jobs/python/wordcountjob.py",
-    dag=dag
-)
+# health_check = SparkSubmitOperator(
+#     task_id="health_check",
+#     conn_id="spark-conn",
+#     application="jobs/python/wordcountjob.py",
+#     dag=dag
+# )
 
-repartition = SparkSubmitOperator(
-    task_id="repartition",
-    conn_id="spark-conn",
-    application="jobs/python/repartition.py",
-    application_args=["--input", "/data/source/data1.csv",
-                      "--temp", "/data/temp_partitions/",
-                      "--output", "/data/bronze/partitions/"],
-    dag=dag
-)
+# repartition = SparkSubmitOperator(
+#     task_id="repartition",
+#     conn_id="spark-conn",
+#     application="jobs/python/repartition.py",
+#     application_args=["--input", "/data/source/data1.csv",
+#                       "--temp", "/data/temp_partitions/",
+#                       "--output", "/data/bronze/partitions/"],
+#     dag=dag
+# )
 
-faker_data = SparkSubmitOperator(
-    task_id="faker_data",
+# faker_data = SparkSubmitOperator(
+#     task_id="faker_data",
+#     conn_id="spark-conn",
+#     application="jobs/python/generate_fake_data.py",
+#     dag=dag
+# )
+
+# internet_usage = SparkSubmitOperator(
+#     task_id="internet_usage",
+#     conn_id="spark-conn",
+#     application="jobs/python/internet_usage.py",
+#     dag=dag
+# )
+#
+# mobile_usage = SparkSubmitOperator(
+#     task_id="mobile_usage",
+#     conn_id="spark-conn",
+#     application="jobs/python/mobile_usage.py",
+#     dag=dag
+# )
+
+tourist_country = SparkSubmitOperator(
+    task_id="tourist_country",
     conn_id="spark-conn",
-    application="jobs/python/generate_fake_data.py",
+    application="jobs/python/tourist_country.py",
     dag=dag
 )
 
@@ -48,4 +69,5 @@ end = PythonOperator(
     dag=dag
 )
 
-start >> health_check >> repartition >> faker_data >> end
+# start >> health_check >> repartition >> faker_data >> internet_usage >> mobile_usage >> end
+start >> tourist_country >> end
