@@ -56,10 +56,10 @@ start = PythonOperator(
 #     dag=dag
 # )
 
-country_list = SparkSubmitOperator(
-    task_id="country_list",
+tourist_country = SparkSubmitOperator(
+    task_id="tourist_country",
     conn_id="spark-conn",
-    application="jobs/python/country_list.py",
+    application="jobs/python/tourist_country.py",
     dag=dag
 )
 
@@ -70,4 +70,4 @@ end = PythonOperator(
 )
 
 # start >> health_check >> repartition >> faker_data >> internet_usage >> mobile_usage >> end
-start >> country_list >> end
+start >> tourist_country >> end
