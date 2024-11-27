@@ -18,41 +18,48 @@ start = PythonOperator(
     dag=dag
 )
 
-health_check = SparkSubmitOperator(
-    task_id="health_check",
-    conn_id="spark-conn",
-    application="jobs/python/wordcountjob.py",
-    dag=dag
-)
+# health_check = SparkSubmitOperator(
+#     task_id="health_check",
+#     conn_id="spark-conn",
+#     application="jobs/python/wordcountjob.py",
+#     dag=dag
+# )
 
-repartition = SparkSubmitOperator(
-    task_id="repartition",
-    conn_id="spark-conn",
-    application="jobs/python/repartition.py",
-    application_args=["--input", "/data/source/data1.csv",
-                      "--temp", "/data/temp_partitions/",
-                      "--output", "/data/bronze/partitions/"],
-    dag=dag
-)
+# repartition = SparkSubmitOperator(
+#     task_id="repartition",
+#     conn_id="spark-conn",
+#     application="jobs/python/repartition.py",
+#     application_args=["--input", "/data/source/data1.csv",
+#                       "--temp", "/data/temp_partitions/",
+#                       "--output", "/data/bronze/partitions/"],
+#     dag=dag
+# )
 
-faker_data = SparkSubmitOperator(
-    task_id="faker_data",
-    conn_id="spark-conn",
-    application="jobs/python/generate_fake_data.py",
-    dag=dag
-)
+# faker_data = SparkSubmitOperator(
+#     task_id="faker_data",
+#     conn_id="spark-conn",
+#     application="jobs/python/generate_fake_data.py",
+#     dag=dag
+# )
 
-internet_usage = SparkSubmitOperator(
-    task_id="internet_usage",
-    conn_id="spark-conn",
-    application="jobs/python/internet_usage.py",
-    dag=dag
-)
+# internet_usage = SparkSubmitOperator(
+#     task_id="internet_usage",
+#     conn_id="spark-conn",
+#     application="jobs/python/internet_usage.py",
+#     dag=dag
+# )
+#
+# mobile_usage = SparkSubmitOperator(
+#     task_id="mobile_usage",
+#     conn_id="spark-conn",
+#     application="jobs/python/mobile_usage.py",
+#     dag=dag
+# )
 
-mobile_usage = SparkSubmitOperator(
-    task_id="mobile_usage",
+country_list = SparkSubmitOperator(
+    task_id="country_list",
     conn_id="spark-conn",
-    application="jobs/python/mobile_usage.py",
+    application="jobs/python/country_list.py",
     dag=dag
 )
 
@@ -62,4 +69,5 @@ end = PythonOperator(
     dag=dag
 )
 
-start >> health_check >> repartition >> faker_data >> internet_usage >> mobile_usage >> end
+# start >> health_check >> repartition >> faker_data >> internet_usage >> mobile_usage >> end
+start >> country_list >> end

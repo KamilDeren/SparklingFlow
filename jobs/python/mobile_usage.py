@@ -5,7 +5,6 @@ spark = SparkSession.builder.appName("MobileUsage").getOrCreate()
 
 df = spark.read.csv('/data/bronze/partitions/milan_mobile_part1.csv', header=True, inferSchema=True)
 
-df = spark.read.csv("/data/bronze/partitions/milan_mobile_part1.csv", header=True, inferSchema=True)
 
 df_mobile_usage = df.select(
     concat(col('GridID').cast('string'), lit("_"), col('countrycode').cast('string')).alias("GridID_countrycode"),
