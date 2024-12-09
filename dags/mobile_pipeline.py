@@ -62,10 +62,24 @@ tourist_country = SparkSubmitOperator(
     dag=dag
 )
 
+internet_per_tourist = SparkSubmitOperator(
+    task_id="internet_per_tourist",
+    conn_id="spark-conn",
+    application="jobs/python/internet_per_tourist.py",
+    dag=dag
+)
+
+mobile_per_tourist = SparkSubmitOperator(
+    task_id="mobile_per_tourist",
+    conn_id="spark-conn",
+    application="jobs/python/mobile_per_tourist.py",
+    dag=dag
+)
+
 end = PythonOperator(
     task_id="end",
     python_callable=lambda: print("Jobs completed successfully"),
     dag=dag
 )
 
-start >> health_check >> repartition >> faker_data >> [tourist_country, internet_usage, mobile_usage] >> end
+start >> health_check >> repartition >> faker_data >> [tourist_country, internet_usage, mobile_usage] >> [mobile_per_tourist,internet_per_tourist] >> end
