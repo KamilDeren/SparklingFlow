@@ -1,10 +1,13 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, concat, lit, coalesce
+import sys
 
 spark = SparkSession.builder.appName("MobileUsage").getOrCreate()
 
-df = spark.read.csv('/data/bronze/partitions/milan_mobile_part1.csv', header=True, inferSchema=True)
+input_path = sys.argv[sys.argv.index('--input') + 1]
+output_path = sys.argv[sys.argv.index('--output') + 1]
 
+df = spark.read.csv(input_path, header=True, inferSchema=True)
 
 df_mobile_usage = df.select(
     concat(col('GridID').cast('string'), lit("_"), col('countrycode').cast('string')).alias("GridID_countrycode"),
@@ -15,6 +18,4 @@ df_mobile_usage = df.select(
     col("callout").alias("CallOutCDR")
 )
 
-df_mobile_usage.coalesce(1).write.csv('/data/silver/mobile_usage_output', header=True, mode="overwrite")
-
-print("Mobile usage data successfully written to file")
+df_mobile_usage.coalesce(1).write.csv(output_path, header=True, mode="overwrite")

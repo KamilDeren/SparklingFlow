@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.8.4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
   <diagram name="Strona-1" id="AKng_ESbKjumxK6DU_Bs">
     <mxGraphModel dx="2501" dy="1915" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -96,7 +96,7 @@
           <mxGeometry x="870" y="510" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="fPY2Tthy9RuAqfQ_gG5_-31" value="dane 1 gotowe do prezentacji" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="1910" y="97.5" width="140" height="65" as="geometry" />
+          <mxGeometry x="1928" y="97.5" width="140" height="65" as="geometry" />
         </mxCell>
         <mxCell id="fPY2Tthy9RuAqfQ_gG5_-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fPY2Tthy9RuAqfQ_gG5_-32" target="fPY2Tthy9RuAqfQ_gG5_-31" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -187,49 +187,90 @@
             <mxPoint x="1660" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cyaOHyr9ARaaXlVXIIjq-13" value="Sprawdzenie powiązania zużycia vs mobile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="2090" y="200" width="170" height="60" as="geometry" />
+        <mxCell id="cyaOHyr9ARaaXlVXIIjq-13" value="Ilość użytkowników ze względu na kraj" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="2320" y="190" width="170" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="cyaOHyr9ARaaXlVXIIjq-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fPY2Tthy9RuAqfQ_gG5_-31" target="cyaOHyr9ARaaXlVXIIjq-13" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1830" y="140" as="sourcePoint" />
-            <mxPoint x="1920" y="140" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="2050" y="140" />
-              <mxPoint x="2090" y="140" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="cyaOHyr9ARaaXlVXIIjq-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="fPY2Tthy9RuAqfQ_gG5_-38" target="cyaOHyr9ARaaXlVXIIjq-13" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1840" y="150" as="sourcePoint" />
-            <mxPoint x="1930" y="150" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="2090" y="288" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="cyaOHyr9ARaaXlVXIIjq-16" value="Czy zużycie internetu ma powiązanie z aktywnością teleinformatyczną" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
-          <mxGeometry x="2180" y="262.5" width="160" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="cyaOHyr9ARaaXlVXIIjq-17" value="dane 2 gotowe do prezentacji" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="2320" y="197.5" width="140" height="65" as="geometry" />
+        <mxCell id="cyaOHyr9ARaaXlVXIIjq-17" value="dane gotowe do prezentacji" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="2670" y="187.5" width="140" height="65" as="geometry" />
         </mxCell>
         <mxCell id="cyaOHyr9ARaaXlVXIIjq-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cyaOHyr9ARaaXlVXIIjq-13" target="cyaOHyr9ARaaXlVXIIjq-17" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="2078" y="298" as="sourcePoint" />
-            <mxPoint x="2100" y="255" as="targetPoint" />
+            <mxPoint x="2318" y="288" as="sourcePoint" />
+            <mxPoint x="2340" y="245" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="2290" y="230" />
-              <mxPoint x="2290" y="230" />
+              <mxPoint x="2530" y="220" />
+              <mxPoint x="2530" y="220" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="cyaOHyr9ARaaXlVXIIjq-19" value="schema:&amp;nbsp;&lt;br&gt;GridID: Integer&lt;div&gt;TimeInterval: Timestamp&lt;/div&gt;&lt;div&gt;Name: Varchar&lt;/div&gt;&lt;div&gt;Surname: Varchar&lt;/div&gt;&lt;div&gt;Country: Varchar&lt;/div&gt;&lt;div&gt;CountryCode: Integer&lt;/div&gt;&lt;div&gt;InternetCDR: Float&lt;/div&gt;&lt;div&gt;InternetTransfer: Float&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="2050" y="-30" width="142" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="fPhZCAbLaX8Kj6sVN-mF-1" value="schema:&amp;nbsp;&lt;div&gt;GridID_countrycode: Varchar&lt;br&gt;&lt;div&gt;first_name: Varchar&lt;/div&gt;&lt;/div&gt;&lt;div&gt;last_name: Varchar&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
+        <mxCell id="fPhZCAbLaX8Kj6sVN-mF-1" value="schema:&amp;nbsp;&lt;div&gt;GridID_countrycode: Varchar&lt;br&gt;&lt;div&gt;first_name: Varchar&lt;/div&gt;&lt;/div&gt;&lt;div&gt;last_name: Varchar&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" parent="1" vertex="1">
           <mxGeometry x="1450" y="540" width="140" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-1" value="Jaki % użytkowników korzysta z danych mobilnych/internetu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="290" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="-jtHRvVCx99eNBrX7xc9-1" target="cyaOHyr9ARaaXlVXIIjq-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2308" y="493" as="sourcePoint" />
+            <mxPoint x="2550" y="425" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2630" y="320" />
+              <mxPoint x="2630" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-5" value="Średnie zużycie danych mobilnych (boxplot)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="97.5" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="-jtHRvVCx99eNBrX7xc9-5" target="cyaOHyr9ARaaXlVXIIjq-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2308" y="113" as="sourcePoint" />
+            <mxPoint x="2630" y="-127.5" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2630" y="128" />
+              <mxPoint x="2630" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-8" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="fPY2Tthy9RuAqfQ_gG5_-38" target="fPY2Tthy9RuAqfQ_gG5_-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2470" y="290" as="sourcePoint" />
+            <mxPoint x="2520" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2160" y="320" />
+              <mxPoint x="2160" y="230" />
+              <mxPoint x="2160" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-9" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="cyaOHyr9ARaaXlVXIIjq-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2160" y="220" as="sourcePoint" />
+            <mxPoint x="2500" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="-jtHRvVCx99eNBrX7xc9-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2160" y="220" as="sourcePoint" />
+            <mxPoint x="2330" y="230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2240" y="220" />
+              <mxPoint x="2240" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-jtHRvVCx99eNBrX7xc9-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="-jtHRvVCx99eNBrX7xc9-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2160" y="220" as="sourcePoint" />
+            <mxPoint x="2330" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2240" y="220" />
+              <mxPoint x="2240" y="128" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
