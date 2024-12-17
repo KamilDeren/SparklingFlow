@@ -3,11 +3,14 @@ from pyspark.sql.functions import concat, lit, coalesce, udf, col
 from pyspark.sql.types import StructType, StructField, StringType
 import phonenumbers
 from phonenumbers import geocoder
+import sys
 
 spark = SparkSession.builder.appName("MobileUsage").getOrCreate()
 
-df = spark.read.csv('/data/bronze/fake_names_output/part-00000-3600c98d-a75f-4c8a-99df-6a30d0bac516-c000.csv',
-                    header=True, inferSchema=True)
+input_path = sys.argv[sys.argv.index('--input') + 1]
+output_path = sys.argv[sys.argv.index('--output') + 1]
+
+df = spark.read.csv(input_path, header=True, inferSchema=True)
 
 
 def country_name_for_number(p: phonenumbers.PhoneNumber, lang="en") -> str:
@@ -30,4 +33,4 @@ df_with_country = df_with_country.withColumn("country", df_with_country["country
 
 df_with_country = df_with_country.drop("country_struct")
 
-df_with_country.coalesce(1).write.csv('/data/silver/tourist', header=True, mode='overwrite')
+df_with_country.coalesce(1).write.csv(output_path, header=True, mode='overwrite')

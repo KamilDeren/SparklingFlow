@@ -1,10 +1,15 @@
 from pyspark.sql import SparkSession
+import sys
 
 spark = SparkSession.builder.appName("MobilePerTourist").getOrCreate()
 
-tourist_df = spark.read.csv('/data/silver/tourist/part-00000-71033a63-51bb-4085-92a2-06728168a3d0-c000.csv', header=True, inferSchema=True)
+input_path_tourist = sys.argv[sys.argv.index('--input1') + 1]
+input_path_mobile = sys.argv[sys.argv.index('--input2') + 1]
+output_path = sys.argv[sys.argv.index('--output') + 1]
 
-dane_df = spark.read.csv('/data/silver/mobile_usage_output/part-00000-3b8fecf6-7850-40ad-89e8-a2c5853db7f0-c000.csv', header=True, inferSchema=True)
+tourist_df = spark.read.csv(input_path_tourist, header=True, inferSchema=True)
+
+dane_df = spark.read.csv(input_path_mobile, header=True, inferSchema=True)
 
 tourist_df_alias = tourist_df.alias("tourist")
 dane_df_alias = dane_df.alias("dane")
@@ -30,4 +35,4 @@ result_df = result_df.withColumnRenamed("sum(SmsOutCDR)", "total_sms_out")
 result_df = result_df.withColumnRenamed("sum(CallInCDR)", "total_call_in")
 result_df = result_df.withColumnRenamed("sum(CallOutCDR)", "total_call_out")
 
-result_df.write.csv('/data/gold/total_mobile_usage', header=True, mode='overwrite')
+result_df.write.csv(output_path, header=True, mode='overwrite')
